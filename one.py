@@ -87,13 +87,39 @@ class Solution:
         b = a - b
         a = a - b
         print(a, b)
+# sol = Solution()
+# sol.swap_without_temp(a, b)  # 200 100
+# sol.swap_without_temp(a2, b2)  # 300 500
+
+#7 check for num that ends with zero
+num = 123
+num2 = 1000
+class Solution:
+    def end_with_zero(self, num):
+        if num % 10 == 0:
+            return True
+        else:
+            return False
+# sol = Solution()
+# print(sol.end_with_zero(num))  #False
+# print(sol.end_with_zero(num2)) #True
+
+#8 sum of digits (converting num to string approach⚠️)
+num = 12345
+num2 = 99999
+num3 = 2024
+class Solution:
+    def sum_of_digits(self, num):
+        number = abs(num)
+        total = 0
+        for digit in str(number):
+            total += int(digit)
+        
+        return total
 sol = Solution()
-sol.swap_without_temp(a, b)  # 200 100
-sol.swap_without_temp(a2, b2)  # 300 500
-
-
-
-
+print(sol.sum_of_digits(num))  #15
+print(sol.sum_of_digits(num2)) #45
+print(sol.sum_of_digits(num3)) #8
 
 
 
