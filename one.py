@@ -135,7 +135,21 @@ class Solution:
 # print(sol.sum_of_digits(num2))
 # print(sol.sum_of_digits(num3))
 
-#10 
+#10 divisble by a or b in range 1 to n
+n = 20
+a = 2
+b = 3
+n2 = 30
+a2 = 5
+b2 = 7
+class Solution:
+    def divisble_by_a_or_b(self, n, a, b):
+        for i in range(1, n + 1):
+            if i % a == 0 or i % b == 0:
+                print(i, end=" ")
+sol = Solution()
+sol.divisble_by_a_or_b(n, a, b) #2 3 4 6 8 9 10 12 14 15 16 18 20
+sol.divisble_by_a_or_b(n2, a2, b2) #5 7 10 14 15 20 21 25 28 30
 
 
 
