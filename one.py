@@ -110,20 +110,32 @@ num2 = 99999
 num3 = 2024
 class Solution:
     def sum_of_digits(self, num):
-        number = abs(num)
         total = 0
-        for digit in str(number):
+        for digit in str(num):
             total += int(digit)
-        
         return total
-sol = Solution()
-print(sol.sum_of_digits(num))  #15
-print(sol.sum_of_digits(num2)) #45
-print(sol.sum_of_digits(num3)) #8
+# sol = Solution()
+# print(sol.sum_of_digits(num))  #15
+# print(sol.sum_of_digits(num2)) #45
+# print(sol.sum_of_digits(num3)) #8
 
+#9 sum of digits without converting num to string
+num = 12345
+num2 = 99999
+num3 = 2024
+class Solution:
+    def sum_of_digits(self, num):
+        total = 0
+        while num > 0:
+            total += num % 10 #get last digit
+            num //= 10        #remove last digit
+        return total
+# sol = Solution()
+# print(sol.sum_of_digits(num))
+# print(sol.sum_of_digits(num2))
+# print(sol.sum_of_digits(num3))
 
-
-
+#10 
 
 
 
