@@ -72,13 +72,24 @@ class Solution:
         a = b
         b = temp
         print(a, b)
+# sol = Solution()
+# sol.swap(a, b)  # 200 100
+# sol.swap(a2, b2) # hello bro
+
+#6 swap without using temp variable
+a = 100
+b = 200
+a2 = 500
+b2 = 300
+class Solution:
+    def swap_without_temp(self, a, b):
+        a = a + b
+        b = a - b
+        a = a - b
+        print(a, b)
 sol = Solution()
-sol.swap(a, b)  # 200 100
-sol.swap(a2, b2) # hello bro
-
-
-
-
+sol.swap_without_temp(a, b)  # 200 100
+sol.swap_without_temp(a2, b2)  # 300 500
 
 
 
