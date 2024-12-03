@@ -147,21 +147,102 @@ class Solution:
         for i in range(1, n + 1):
             if i % a == 0 or i % b == 0:
                 print(i, end=" ")
+# sol = Solution()
+# sol.divisble_by_a_or_b(n, a, b) #2 3 4 6 8 9 10 12 14 15 16 18 20
+# sol.divisble_by_a_or_b(n2, a2, b2) #5 7 10 14 15 20 21 25 28 30
+
+#11. factors of num
+num = 20
+num2 = 30
+class Solution:
+    def factors(self, num):
+        for i in range(1, num + 1):
+            if num % i == 0:
+                print(i, end=" ")
+# sol = Solution()
+# sol.factors(num) #1 2 4 5 10 20
+# sol.factors(num2) #1 2 3 5 6 10 15 30
+
+#12 number of factors
+num = 20
+num2 = 30
+class Solution:
+    def no_of_factors(self, num):
+        count = 0
+        for i in range(1, num + 1):
+            if num % i == 0:
+                count += 1
+        return count
+# sol = Solution()
+# print(sol.no_of_factors(num)) #6
+# print(sol.no_of_factors(num2)) #8
+
+#13 check prime number
+n = 1
+n2 = 2
+n3 = 3
+n4 = 5
+class Solution:
+    def check_prime(self, n):
+        #this will not return 1 as prime handles edge case for numbers less than 2
+        if n < 2:
+            return "Not a prime number"
+        no_of_factors = 0 #prime has only 2 factors 1 and itself
+        for i in range(1, n + 1):
+            if n % i == 0:
+                no_of_factors += 1
+        
+        if no_of_factors == 2:
+            return "Prime number"
+        else:
+            return "Not a prime number"
+# sol = Solution()
+# print(sol.check_prime(n)) #Not a prime number
+# print(sol.check_prime(n2)) #Prime number
+# print(sol.check_prime(n3)) #Prime number
+# print(sol.check_prime(n4)) #Prime number
+
+#14 check prime another method
+n = 1
+n2 = 2
+n3 = 3
+n4 = 5
+class Solution:
+    def check_prime(self, n):
+        #handles edge case for numbers less than 2
+        if n < 2:
+            return "Not a prime number"
+
+        for i in range(2, (n//2) + 1):
+            if n % i == 0:
+                return "Not a prime number"
+
+        return "Prime number"
+# sol = Solution()
+# print(sol.check_prime(n)) #Not a prime number
+# print(sol.check_prime(n2)) #Prime number
+# print(sol.check_prime(n3)) #Prime number
+# print(sol.check_prime(n4)) #Prime number
+
+
+#15 reverse a number
+num = 12345
+num2 = 2024
+num3 = 100
+class Solution:
+    def reverse(self, num):
+        reversed_num = 0
+
+        while num > 0:
+            digit = num % 10 #get the last digit
+            reversed_num = reversed_num * 10 + digit # add the digit to reversed num
+            num //= 10 #remove the last digit from num
+
+        return reversed_num
 sol = Solution()
-sol.divisble_by_a_or_b(n, a, b) #2 3 4 6 8 9 10 12 14 15 16 18 20
-sol.divisble_by_a_or_b(n2, a2, b2) #5 7 10 14 15 20 21 25 28 30
-
-
-
-
-
-
-
-
-
-
-
-
+print(sol.reverse(num)) #54321
+print(sol.reverse(num2)) #4202
+print(sol.reverse(num3)) #1
 
 
 
