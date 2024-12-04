@@ -249,7 +249,24 @@ class Solution:
 # print(sol.check_prime(n3)) #Prime number    
 # print(sol.check_prime(n4)) #Prime number   
 
-#16 
+#16 check prime method 4
+n = 1
+n2 = 2
+n3 = 3
+n4 = 5
+class Solution:
+    def check_prime(self, n):
+        if n < 2:
+            return "Not a prime number"
+        for i in range(2, int(n ** 0.5) + 1): #i*i <= n is same as i <= sqrt(n)
+            if n % i == 0:
+                return "Not a prime number"
+        return "Prime number"
+sol = Solution()
+# print(sol.check_prime(n)) #Not a prime number
+# print(sol.check_prime(n2)) #Prime number
+# print(sol.check_prime(n3)) #Prime number
+# print(sol.check_prime(n4)) #Prime number
 
 
 
