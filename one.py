@@ -268,8 +268,30 @@ sol = Solution()
 # print(sol.check_prime(n3)) #Prime number
 # print(sol.check_prime(n4)) #Prime number
 
+#17 print all prime numbers between given two numbers
+n1 = 10
+n2 = 20
+n3 = 50
+n4 = 100
+class Solution:
+    def print_prime(self, n1, n2):
+        def check_prime(n):
+            if n < 2:
+                return False
+            for i in range(2, int(n ** 0.5) + 1):
+                if n % i == 0:
+                    return False
+            return True
+        #make sure that "start" is less than "end"
+        start, end = (n1, n2) if n1 < n2 else (n2, n1)
+        for i in range(start, end + 1):
+            if check_prime(i):
+                print(i, end=" ")
+# sol = Solution()
+# sol.print_prime(n1, n2) #11 13 17 19
+# sol.print_prime(n3, n4) #53 59 61 67 71 73 79 83 89 97
 
-
+#18
 
 
 
