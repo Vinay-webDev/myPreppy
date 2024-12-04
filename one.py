@@ -292,7 +292,7 @@ class Solution:
 # sol.print_prime(n3, n4) #53 59 61 67 71 73 79 83 89 97
 
 #18 Sum of all prime numbers up to n
-import math
+# import math
 n = 10
 n2 = 20
 n3 = 100
@@ -312,16 +312,60 @@ class Solution:
             if check_prime(i):
                 total += i
         return total
+# sol = Solution()
+# print(sol.sum_of_prime(n))  #17
+# print(sol.sum_of_prime(n2)) #77
+# print(sol.sum_of_prime(n3)) #1060
+
+#19 find the largest prime number in given range
+# import math
+n1 = 10
+n2 = 20
+n3 = 50
+n4 = 100
+class Solution:
+    def largest_prime(self, n1, n2):
+        def check_prime(num):
+            if num < 2:
+                return False
+            for i in range(2, int(math.sqrt(num)) + 1):
+                if num % i == 0:
+                    return False
+            return True
+        #start is always less than end
+        start, end = (n1, n2) if n1 < n2 else (n2, n1)
+        largest_prime_num = -1
+        for i in range(start, end + 1):
+            if check_prime(i):
+                largest_prime_num = i
+        return largest_prime_num
+# sol = Solution()
+# print(sol.largest_prime(n1, n2)) #19
+# print(sol.largest_prime(n3, n4)) #97
+
+#20 find the smallest prime number in given range
+import math
+n1 = 10
+n2 = 20
+n3 = 50
+n4 = 100
+class Solution:
+    def smallest_prime(self, n1, n2):
+        def check_prime(num):
+            if num < 2:
+                return False
+            for i in range(2, int(math.sqrt(num)) + 1):
+                if num % i == 0:
+                    return False
+            return True
+        #start from small end large
+        start, end = (n1, n2) if n1 < n2 else (n2, n1)
+        for i in range(start, end + 1):
+            if check_prime(i):
+                return i
 sol = Solution()
-print(sol.sum_of_prime(n))  #17
-print(sol.sum_of_prime(n2)) #77
-print(sol.sum_of_prime(n3)) #1060
-
-
-
-
-
-
+print(sol.smallest_prime(n1, n2)) #11
+print(sol.smallest_prime(n3, n4)) #53
 
 
 
