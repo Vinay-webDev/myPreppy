@@ -209,20 +209,94 @@ n3 = 3
 n4 = 5
 class Solution:
     def check_prime(self, n):
+        no_of_factors = 0
         #handles edge case for numbers less than 2
         if n < 2:
             return "Not a prime number"
 
         for i in range(2, (n//2) + 1):
             if n % i == 0:
-                return "Not a prime number"
+                no_of_factors += 1
 
-        return "Prime number"
+        if no_of_factors == 0:
+            return "Prime number"
+        else:
+            return "Not a prime number"
 # sol = Solution()
 # print(sol.check_prime(n)) #Not a prime number
 # print(sol.check_prime(n2)) #Prime number
 # print(sol.check_prime(n3)) #Prime number
 # print(sol.check_prime(n4)) #Prime number
+
+#15 check prime method 3
+n = 1
+n2 = 2
+n3 = 3
+n4 = 5
+class Solution:
+    def check_prime(self, n):
+        #handles edge case for numbers less than 2
+        if n < 2:
+            return "Not a prime number"
+        #we know that prime has only two factors 1 and itself
+        for i in range(2, (n//2) + 1):
+            if n % i == 0:
+                return "Not a prime number"
+        return "Prime number"
+# sol = Solution()
+# print(sol.check_prime(n))  #Not a prime number
+# print(sol.check_prime(n2)) #Prime number
+# print(sol.check_prime(n3)) #Prime number    
+# print(sol.check_prime(n4)) #Prime number   
+
+#16 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #15 reverse a number
@@ -239,10 +313,10 @@ class Solution:
             num //= 10 #remove the last digit from num
 
         return reversed_num
-sol = Solution()
-print(sol.reverse(num)) #54321
-print(sol.reverse(num2)) #4202
-print(sol.reverse(num3)) #1
+# sol = Solution()
+# print(sol.reverse(num)) #54321
+# print(sol.reverse(num2)) #4202
+# print(sol.reverse(num3)) #1
 
 
 
