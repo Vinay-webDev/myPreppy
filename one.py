@@ -291,9 +291,31 @@ class Solution:
 # sol.print_prime(n1, n2) #11 13 17 19
 # sol.print_prime(n3, n4) #53 59 61 67 71 73 79 83 89 97
 
-#18
+#18 Sum of all prime numbers up to n
+import math
+n = 10
+n2 = 20
+n3 = 100
+class Solution:
+    def sum_of_prime(self, n):
+        def check_prime(num):
+            if num < 2:
+                return False
+            for i in range(2, int(math.sqrt(num)) + 1):
+                if num % i == 0:
+                    return False
+            return True
 
+        total = 0
 
+        for i in range(2, n + 1):
+            if check_prime(i):
+                total += i
+        return total
+sol = Solution()
+print(sol.sum_of_prime(n))  #17
+print(sol.sum_of_prime(n2)) #77
+print(sol.sum_of_prime(n3)) #1060
 
 
 
