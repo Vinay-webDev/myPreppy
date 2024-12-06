@@ -344,7 +344,7 @@ class Solution:
 # print(sol.largest_prime(n3, n4)) #97
 
 #20 find the smallest prime number in given range
-import math
+# import math
 n1 = 10
 n2 = 20
 n3 = 50
@@ -367,6 +367,10 @@ sol = Solution()
 print(sol.smallest_prime(n1, n2)) #11
 print(sol.smallest_prime(n3, n4)) #53
 
+#21 Count prime numbers up to n that are divisible by a given number
+n = 20
+n2 = 50
+n3 = 100
 
 
 
