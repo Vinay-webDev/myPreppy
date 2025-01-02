@@ -467,6 +467,6 @@ class Solution:
 
         return -1
 
-# sol = Solution()
+# type: ignore # sol = Solution()
 # print(sol.two_pointers(array1, target1))
 # print(sol.two_pointers(array2, target2))
