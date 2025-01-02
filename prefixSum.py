@@ -9,8 +9,8 @@ class Solution:
         for i in range(1, n):
             p[i] = p[i - 1] + nums[i]
         return p
-sol = Solution()
-print(sol.prefixSum(nums1, queries1)) #[8, 9, 11, 14, 20, 19, 28, 39, 44, 51]
+# sol = Solution()
+# print(sol.prefixSum(nums1, queries1)) #[8, 9, 11, 14, 20, 19, 28, 39, 44, 51]
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class Solution:
     def prefixSum(self, nums, queries):
@@ -25,8 +25,8 @@ class Solution:
             range_sum = p[r] - p[l - 1]
             res.append(range_sum)
         return res
-sol = Solution()
-print(sol.prefixSum(nums1, queries1)) #[12, 25, 37, 12, 28]
+# sol = Solution()
+# print(sol.prefixSum(nums1, queries1)) #[12, 25, 37, 12, 28]
 """
 a = []
 range = [[l, r]]
@@ -55,8 +55,29 @@ class Solution:
             range_sum = p[r + 1] - p[l]
             res.append(range_sum)
         return res
+# sol = Solution()
+# print(sol.prefixSum(nums2, queries2)) #error because of this query ===> [4] where r = queries[j][1] is out of range
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+class Solution:
+    def prefixSum(self, nums, queries):
+        n = len(nums)
+        p = [0] * (n + 1)
+        for i in range(1, n + 1):
+            p[i] = p[i - 1] + nums[i - 1]
+        res = []
+        for query in queries:
+            if len(query) == 2:
+                l, r = query #unpack
+                range_sum = p[r + 1] - p[l]
+                res.append(range_sum)
+            else:
+                r = query[0]
+                range_sum = p[r + 1]
+                res.append(range_sum)
+        return res
 sol = Solution()
-print(sol.prefixSum(nums2, queries2)) #error because of this query ===> [4] where r = queries[j][1] is out of range
+print(sol.prefixSum(nums2, queries2)) #[60,150,150,90]
+
 
         
 
